@@ -47,11 +47,16 @@ class App extends React.Component {
         <h1>Book List</h1>
         <form>
           <input
+          id="search-bar"
           onChange={this.userSearchTerm}
           value={this.state.searchTerm}
           type="text"
           placeholder="Search for a book"/>
-          <input onClick={this.searchExists} type="submit" value="Search"/>
+          <input
+          id="search-btn"
+          onClick={this.searchExists}
+          type="submit"
+          value="Search"/>
         </form>
         <div className="book-container">
         {this.state.errorExists ? this.state.errorMessage : ('')}
@@ -60,9 +65,9 @@ class App extends React.Component {
           {this.state.data.map(
             (books, index) => {
               return   <li key={index}>
-                <img alt={books.title} src={books.imageUrl}/>
-                 <h3>{books.title}</h3>
-                <h5>By: {books.authorName}</h5>
+                <h3 id="book-title">{books.title}</h3>
+                <h5 id="book-author">By: {books.authorName}</h5>
+                <img id="book-img" alt={books.title} src={books.imageUrl}/>
               </li>
             }
           )}
