@@ -3,10 +3,14 @@
 
 Overview
 -
+I had a lot of fun with this assignment since I enjoy working with API data and React. This app uses ReactJS, CSS, and HTML.
 
 
 Test Cases
--  
+-  The user can search for a book title or author. The search will accept uppercase, lowercase, and substrings.
+- If the searched term doesn't exist, then the user is notified with a message and has the option to search a different term.
+- If the searched term does exist, then the listed books that have the searched term are listed below.
+
 
 # Getting Started with Create React App
 
