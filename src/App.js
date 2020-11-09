@@ -23,7 +23,8 @@ class App extends React.Component {
       console.log(error);
       this.setState({
         errorExists: true,
-        errorMessage: `${this.state.searchTerm} Does not exist`
+        errorMessage: `${this.state.searchTerm} Does not exist`,
+        data: []
       })
     })
   }
@@ -31,6 +32,8 @@ class App extends React.Component {
   userSearchTerm = (event) => {
     this.setState({
       searchTerm: event.target.value,
+      data: [],
+      errorMessage: ''
     })
     console.log(this.state.searchTerm);
   }
@@ -58,10 +61,10 @@ class App extends React.Component {
           type="submit"
           value="Search"/>
         </form>
+        { this.state.errorExists ? <h2 id="error-msg">{this.state.errorMessage}</h2> : ('') }
         <div className="book-container">
-        {this.state.errorExists ? this.state.errorMessage : ('')}
-        { this.state.data ?
-           <ul>
+        {this.state.data ?
+          (<ul>
           {this.state.data.map(
             (books, index) => {
               return   <li key={index}>
@@ -71,9 +74,9 @@ class App extends React.Component {
               </li>
             }
           )}
-          </ul>
-          : ('') }
+          </ul>) : ('')}
         </div>
+
       </div>
     );
   }
