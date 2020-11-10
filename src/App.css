@@ -4,6 +4,7 @@
 
 body {
   padding: 20px;
+  background-color: rgba(230, 230, 250, 0.55);
 }
 
 h1 {
@@ -29,6 +30,10 @@ form {
   outline: none;
 }
 
+#search-bar:active {
+  background-color: white;
+}
+
 #search-btn {
   padding: 5px 10px;
   background-color: black;
@@ -52,8 +57,8 @@ li {
   width: 900px;
   max-width: 100%;
   height: 200px;
-  background-color: #F8F8F8;
-  border: 1px solid #ccc;
+  background-color: white;
+  border: 1px solid rgb(248, 167, 134);
 }
 
 #book-img {
