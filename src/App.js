@@ -68,9 +68,11 @@ class App extends React.Component {
           {this.state.data.map(
             (books, index) => {
               return   <li key={index}>
+              <img id="book-img" alt={books.title} src={books.imageUrl}/>
+              <div className="text-container">
                 <h3 id="book-title">{books.title}</h3>
                 <h5 id="book-author">By: {books.authorName}</h5>
-                <img id="book-img" alt={books.title} src={books.imageUrl}/>
+              </div>
               </li>
             }
           )}
