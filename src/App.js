@@ -11,10 +11,12 @@ class App extends React.Component {
     errorMessage: ''
   }
 
+  // get request to access api with search term
   accessApiData = (term) => {
     axios.get(`https://goodreads-server-express--dotdash.repl.co/search/${term}`).then(
       (response) => {
         console.log(response);
+        // save all response data in an array
         this.setState({
           data: response.data.list
         })
@@ -22,6 +24,7 @@ class App extends React.Component {
     ).catch(error => {
       console.log(error);
       this.setState({
+        // if there's an error save errormessage with searched term
         errorExists: true,
         errorMessage: `${this.state.searchTerm} Does not exist`,
         data: []
@@ -29,6 +32,7 @@ class App extends React.Component {
     })
   }
 
+  // set search term to event target value
   userSearchTerm = (event) => {
     this.setState({
       searchTerm: event.target.value,
@@ -38,6 +42,7 @@ class App extends React.Component {
     console.log(this.state.searchTerm);
   }
 
+  // if search exists, then set search term as parameter for access api function
   searchExists = (event) => {
     event.preventDefault();
     this.accessApiData(this.state.searchTerm);
