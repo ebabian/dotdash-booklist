@@ -30,7 +30,7 @@ form {
   outline: none;
 }
 
-#search-bar:active {
+#search-bar:focus {
   background-color: white;
 }
 
